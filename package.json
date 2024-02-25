@@ -1,0 +1,14 @@
+{
+  "name": "flag-guesser",
+  "version": "1.0.0",
+  "author": {
+    "name": "Manuel Seitz",
+    "url": "https://github.com/ManuelSeitz"
+  },
+  "repository": {
+    "url": "https://github.com/ManuelSeitz/flag-guesser"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

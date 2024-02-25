@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 246, 246, 246;
+    --background: 60, 60, 60;
+    --secondary-background: 45, 45, 45;
+
+    font-family: "Noto Sans", sans-serif;
+    color: rgb(var(--primary));
+    background: linear-gradient(150deg, rgb(var(--background)), rgb(var(--secondary-background)) 60%);
+  }
+  
+  .score-correct-answer {
+    animation: scoreCorrectAnswer 600ms linear;
+  }
+
+  .score-wrong-answer {
+    animation: scoreWrongAnswer 500ms linear;
+  }
+
+  @keyframes scoreCorrectAnswer {
+    0% {
+      color: var(--primary);
+      scale: 1;
+    }
+    50% {
+      color: rgb(16, 146, 55);
+      scale: 1.1;
+    }
+    100% {
+      color: var(--primary);
+      scale: 1;
+    }
+  }
+
+  @keyframes scoreWrongAnswer {
+    0% {
+      color: var(--primary);
+      transform: translateX(0px);
+    }
+    35% {
+      color: rgb(197, 44, 44);
+      transform: translateX(5px);
+    }
+    65% {
+      color: rgb(197, 44, 44);
+      transform: translateX(-5px);
+    }
+    100% {
+      color: var(--primary);
+      transform: translateX(0px);
+    }
+  }
+
+  .flag {
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4));
+  }
+
+  .square:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px rgb(2, 132, 199),
+                0 0 10px 1px rgba(17, 154, 222, 0.5);
+  }
+}
