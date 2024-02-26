@@ -11,10 +11,10 @@
   $answer = '';
   // Recorrer cada letra del país
   foreach (str_split($country_name) as $index => $letter) {
-    if ($letter == ' ') continue;
+    if ($letter === ' ') continue;
     if (isset($_SESSION["hints_index"])) {
       foreach ($_SESSION["hints_index"] as $hint_index) {
-        if ($index == $hint_index) {
+        if ($index === $hint_index) {
           $answer = $answer . $letter;
         }
       }
@@ -27,7 +27,7 @@
   $country_name_without_spaces = str_replace(' ', '', $country_name);
 
   // Lógica de respuesta correcta/incorrecta
-  if (strtolower($country_name_without_spaces) == strtolower($answer)) {
+  if (strtolower($country_name_without_spaces) === strtolower($answer)) {
     $_SESSION["wins"] += 1;
     $_SESSION["score"] += 20 - $_SESSION["current_hints"] * 5;
     $_SESSION["is_answer_correct"] = true;
